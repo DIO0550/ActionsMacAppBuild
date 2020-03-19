@@ -22,6 +22,10 @@ jobs:
       - name: xcode-select 
         run: sudo xcode-select --switch /Applications/Xcode_11.3.app
       
+      - name: List
+        run: |
+              ls
+      
       - name: BUILD APP
         run: |
               mkdir archive
