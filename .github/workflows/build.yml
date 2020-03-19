@@ -22,11 +22,7 @@ jobs:
       - name: xcode-select 
         run: sudo xcode-select --switch /Applications/Xcode_11.3.app
       
-      - name: List
-        run: |
-              ls
-      
       - name: BUILD APP
         run: |
               mkdir archive
-              xcodebuild -project '/ActionsMacAppBuild/ActionsMacAppBuild.xcodeproj' -config Release -scheme 'ActionsMacAppBuild' -archivePath ./archive archive
+              xcodebuild -project './ActionsMacAppBuild/ActionsMacAppBuild.xcodeproj' -config Release -scheme 'ActionsMacAppBuild' -archivePath ./archive archive
