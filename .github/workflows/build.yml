@@ -28,4 +28,4 @@ jobs:
       
       - name: BUILD APP
         run: |
-              xcodebuild -project './ActionsMacAppBuild/ActionsMacAppBuild.xcodeproj' -config Release -scheme 'ActionsMacAppBuild' -archivePath ./archive archive
+              xcodebuild -project './ActionsMacAppBuild/ActionsMacAppBuild.xcodeproj' -config Release -scheme 'ActionsMacAppBuild' CODE_SIGN_IDENTITY="-" -archivePath ./archive archive
