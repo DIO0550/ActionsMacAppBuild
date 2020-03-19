@@ -19,6 +19,9 @@ jobs:
         run: |
               echo "::set-env name=TAG_SHA::$(git rev-parse ${{ env.TAG_NAME }})"
               
+      - name: xcode-select 
+        run: sudo xcode-select --switch /Applications/Xcode_11.3.app
+      
       - name: BUILD APP
         run: |
               mkdir archive
