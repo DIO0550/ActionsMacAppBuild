@@ -18,3 +18,8 @@ jobs:
       - name: GET TAG SHA
         run: |
               echo "::set-env name=TAG_SHA::$(git rev-parse ${{ env.TAG_NAME }})"
+              
+      - name: BUILD APP
+        run: |
+              mkdir archive
+              xcodebuild -project '/ActionsMacAppBuild/ActionsMacAppBuild.xcodeproj' -config Release -scheme 'ActionsMacAppBuild' -archivePath ./archive archive
