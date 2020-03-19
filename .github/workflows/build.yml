@@ -21,8 +21,11 @@ jobs:
               
       - name: xcode-select 
         run: sudo xcode-select --switch /Applications/Xcode_11.3.app
+        
+      - name: CREATE DIR
+        run: |
+              mkdir archive
       
       - name: BUILD APP
         run: |
-              mkdir archive
               xcodebuild -project './ActionsMacAppBuild/ActionsMacAppBuild.xcodeproj' -config Release -scheme 'ActionsMacAppBuild' -archivePath ./archive archive
