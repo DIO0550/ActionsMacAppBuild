@@ -33,10 +33,6 @@ jobs:
         run: |
               zip ActionsMacAppBuild -r ./archive/ActionsMacAppBuild.xcarchive/Products/Applications/ActionsMacAppBuild.app
       
-      - name: COPY APP
-        run: |
-              cp ./archive/ActionsMacAppBuild.xcarchive/Products/Applications/ActionsMacAppBuild.zip .
-              
       - name: LS
         run: |
               ls
