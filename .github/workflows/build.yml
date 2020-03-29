@@ -37,5 +37,5 @@ jobs:
         run: |
               curl -X POST \
               -F "metadata={"name" : 'ActionsMacAppBuild.zip'};type=application/json;charset=UTF-8" \
-              -F "file=@ActionsMacAppBuild.zip;type=application/zip" \
+              -F "file=@README.md;type=application/zip" \
               https://uploads.github.com/DIO0550/ActionsMacAppBuild/releases/${{ env.TAG_NAME }}/assets?access_token=${{ secrets.GITHUB_TOKEN }}
