@@ -39,4 +39,4 @@ jobs:
               -H "Accept: application/vnd.github.manifold-preview" \
               -H "Content-Type: application/zip" \
               --data-binary @./ActionsMacAppBuild.zip \
-              "https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/${{ env.TAG_NAME }}/assets?name=ActionsMacAppBuild.zip"
+              "https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${{ env.TAG_NAME }}/assets?name=ActionsMacAppBuild.zip"
