@@ -15,10 +15,6 @@ jobs:
               echo "::set-env name=TAG_NAME::${{ steps.tagName.outputs.tag  }}"
               
       - uses: actions/checkout@v1
-      - name: GET TAG SHA
-        run: |
-              echo "::set-env name=TAG_SHA::$(git rev-parse ${{ env.TAG_NAME }})"
-              
       - name: xcode-select 
         run: sudo xcode-select --switch /Applications/Xcode_11.3.app
         
@@ -32,11 +28,14 @@ jobs:
       - name: ZIP APP
         run: |
               zip ActionsMacAppBuild -r ./archive/ActionsMacAppBuild.xcarchive/Products/Applications/ActionsMacAppBuild.app
+              
+      - name: jq
+        run: jq
       
       - name: UPLOAD APP
         run: |
               curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
               -H "Accept: application/vnd.github.manifold-preview" \
               -H "Content-Type: application/zip" \
-              --data-binary @./ActionsMacAppBuild.zip \
+              --data-binary @ActionsMacAppBuild.zip \
               "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ env.TAG_NAME }}/assets?name=ActionsMacAppBuild.zip"
