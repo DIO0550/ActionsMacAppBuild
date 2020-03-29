@@ -32,5 +32,4 @@ jobs:
 
       - name: EXPORT APP
         run: |
-              cd archive \
-              ls
+              xcodebuild -exportArchive -archivePath ./archive/archive.xcarchive -exportPath .
