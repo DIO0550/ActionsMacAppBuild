@@ -25,6 +25,7 @@ jobs:
       - name: BUILD APP
         run: |
               xcodebuild -project './ActionsMacAppBuild/ActionsMacAppBuild.xcodeproj' -config Develop -scheme 'ActionsMacAppBuild' -archivePath ./archive/ActionsMacAppBuild archive
+      
       - name: ZIP APP
         run: |
               zip ActionsMacAppBuild -r ./archive/ActionsMacAppBuild.xcarchive/Products/Applications/ActionsMacAppBuild.app
