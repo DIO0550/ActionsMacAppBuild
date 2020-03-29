@@ -24,8 +24,7 @@ jobs:
                  
       - name: RELEASE ID
         run: |
-              echo "::set-env name=RELEASE_ID::$(curl https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ env.TAG_NAME }}?access_token=${{ secrets.GITHUB_TOKEN }} | /
-              jq '."id"')"
+              echo "::set-env name=RELEASE_ID::$(curl https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ env.TAG_NAME }}?access_token=${{ secrets.GITHUB_TOKEN }} | jq '."id"')"
       
       - name: BUILD APP
         run: |
