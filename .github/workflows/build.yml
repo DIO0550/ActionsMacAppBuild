@@ -31,7 +31,7 @@ jobs:
               
       - name: SET RELEASE ID
         run: |
-              echo "::set-env name=RELEASE_ID::$(curl https://api.github.com/repos/${{ github.repository }}/releases/${{ env.TAG_NAME }})"
+              echo "::set-env name=RELEASE_ID::$(curl https://api.github.com/repos/${{ github.repository }}/releases/${{ env.TAG_NAME }} | jq '."id"')"
       
       - name: UPLOAD APP
         run: |
