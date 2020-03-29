@@ -35,4 +35,4 @@ jobs:
       
       - name: UPLOAD APP
         run: |
-              curl -v -H 'Content-Type:application/zip; charset=UTF-8' -X POST --data-binary "./ActionsMacAppBuild.zip" -d '{"name":"ActionsMacAppBuild.zip"}' https://api.github.com/DIO0550/ActionsMacAppBuild/releases/${{ env.TAG_NAME }}/assets?access_token=${{ secrets.GITHUB_TOKEN }}
+              curl -v -H 'Content-Type:application/zip; charset=UTF-8' -X POST --data-binary "./ActionsMacAppBuild.zip" -d '{"name":"ActionsMacAppBuild.zip"}' https://uploads.github.com/DIO0550/ActionsMacAppBuild/releases/${{ env.TAG_NAME }}/assets?access_token=${{ secrets.GITHUB_TOKEN }}
