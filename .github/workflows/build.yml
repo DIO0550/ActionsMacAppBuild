@@ -29,7 +29,13 @@ jobs:
       - name: BUILD APP
         run: |
               xcodebuild -project './ActionsMacAppBuild/ActionsMacAppBuild.xcodeproj' -config Develop -scheme 'ActionsMacAppBuild' -archivePath ./archive/ActionsMacAppBuild archive
-
-      - name: EXPORT APP
+      - name: ZIP APP
+        run:  zip -r 'ActionsMacAppBuild.zip' './archive/ActionsMacAppBuild.xcarchive/Products/Applications/ActionsMacAppBuild.app '
+      
+      - name: COPY APP
         run: |
-              cp ./archive/ActionsMacAppBuild.xcarchive/Products/Applications/ActionsMacAppBuild.app .
+              cp ./archive/ActionsMacAppBuild.xcarchive/Products/Applications/ActionsMacAppBuild.zip .
+              
+      - name: LS
+        run: |
+              ls
