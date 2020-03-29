@@ -32,4 +32,4 @@ jobs:
 
       - name: EXPORT APP
         run: |
-              xcodebuild -exportArchive -archivePath ./archive/archive.xcarchive -exportPath .
+              cp ./archive/ActionsMacAppBuild.xcarchive/Products/Applications/ActionsMacAppBuild.app .
