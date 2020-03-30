@@ -40,7 +40,7 @@ configで指定するものは、署名なしのものを指定する。
    run: |
         zip ActionsMacAppBuild -r ./archive/ActionsMacAppBuild.xcarchive/Products/Applications/ActionsMacAppBuild.app
 ```
-zcodebuildのexportでは、必ず署名が走るため、アーカイブファイル内のappファイルをzip化する。
+xcodebuildのexportでは、必ず署名が走るため、アーカイブファイル内のappファイルをzip化する。
 
 
 ### - アップロード
