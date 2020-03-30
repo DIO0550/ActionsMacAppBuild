@@ -1,4 +1,4 @@
-# acitonsMacAppBuild
+# AcitonsMacAppBuild
 
 ## 概要
 tagプッシュ時にビルドを実行し、Relaseのassetsにビルド物を追加するActions。
